@@ -1,0 +1,13 @@
+.row.wrapper.border-bottom.white-bg.page-heading
+  .col-lg-9
+    = current_user.title(@title) if current_user.present?
+.row.wrapper.wrapper-content.animated.fadeInRight
+  .col-lg-4
+    = search_form_for @q, html: { class: "form-inline" } do |f|
+      = f.search_field :name_cont, placeholder: "Procure pelo nome", class: "form-control"
+      = f.submit class: "btn btn-w-m btn-info"
+.row.wrapper.wrapper-content.animated.fadeInRight
+    = render @users
+
+.row.wrapper.wrapper-content.animated.fadeInRight
+  = will_paginate @users, renderer: BootstrapPagination::Rails

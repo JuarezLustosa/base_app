@@ -1,0 +1,10 @@
+nav.navbar-default.navbar-static-side[role="navigation"]
+  .sidebar-collapse
+    ul#side-menu.nav.metismenu
+      - if user_signed_in?
+        = render 'shared/user_info'
+      li class=""
+        = link_to root_path do
+          i class="fa fa-home"
+          span class="nav-label"
+            | Home

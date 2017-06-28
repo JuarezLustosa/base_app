@@ -1,0 +1,16 @@
+pt-BR:
+  activerecord:
+    models:
+      user:
+        one: "Usuário"
+        other: "Usuários"
+
+    attributes:
+      user:
+        id: "Código"
+        username: "Nome"
+        email: "Email"
+        password: "Senha"
+        password_confirmation: "Confirmar password"
+        current_password: "Senha Atual"
+        is_invalid: "é inválido"

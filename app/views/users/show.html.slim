@@ -1,0 +1,16 @@
+.wrapper.wrapper-content.animated.fadeInRight
+  .row
+    .col-lg-4
+      .widget-head-color-box.navy-bg.p-lg.text-center
+        .m-b-md
+          h2.font-bold.no-margins
+            | #{user.name}
+          = user.profile_photo(128)
+          
+      .widget.lazur-bg.p-xl
+        h2
+          | Email
+        ul.list-unstyled.m-t-md
+          li
+            span.fa.fa-envelope.m-r-xs
+              labe | Email: #{@user.email}

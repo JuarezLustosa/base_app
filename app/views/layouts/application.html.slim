@@ -1,0 +1,28 @@
+doctype 5
+html lang="pt"
+  head
+    meta charset="utf-8"
+    meta name="keywords" content=""
+    meta name="description" content=""
+
+    title
+      = page_title(app_name: t('views.appname'))
+
+    link href="/favicon.ico" rel=("shortcut icon")
+
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+
+    /![if lt IE 9]
+      script src="http://html5shim.googlecode.com/svn/trunk/html5.js"
+
+  body
+    div id="wrapper"
+      = render 'layouts/leftsidebar'
+
+      div id="page-wrapper" class="gray-bg"
+        = render 'flash_messages'
+        = render 'layouts/topnavbar'
+        = yield
+

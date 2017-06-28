@@ -1,0 +1,10 @@
+li.nav-header
+  .dropdown.profile-element
+    span
+     = current_user
+
+    a.dropdown-toggle[data-toggle="dropdown" href="#"]
+      span.clear
+        span.block.m-t-xs
+          strong.font-bold
+            = current_user.name

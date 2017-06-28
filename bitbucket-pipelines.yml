@@ -1,0 +1,25 @@
+# This is a sample build configuration for all languages.
+# Check our guides at https://confluence.atlassian.com/x/VYk8Lw for more examples.
+# Only use spaces to indent your .yml configuration.
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+# image: docker-image:tag
+
+# image: calces/drone-rails-postgres-redis-node-and-phantomjs
+# image: spittet/ruby-postgresql
+# image: cmfatih/phantomjs
+image: zrpaplicacoes/rails-postgres-phantomjs
+
+pipelines:
+  default:
+    - step:
+        script: # Modify the commands below to build your repository.
+          # - cd ~
+          # - export PHANTOM_JS="phantomjs-1.9.8-linux-x86_64"
+          # - wget https://bitbucket.org/ariya/phantomjs/downloads/$PHANTOM_JS.tar.bz2
+          # - sudo tar xvjf $PHANTOM_JS.tar.bz2
+          - /etc/init.d/postgresql start
+          - sudo -u postgres psql -U postgres -d postgres -c "alter user postgres with password 'test_fit';"
+          - bundle install
+          - rake db:create db:migrate RAILS_ENV=test
+          - rspec

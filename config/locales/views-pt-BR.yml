@@ -1,0 +1,10 @@
+"pt-BR":
+  views:
+    introduce_sentece: ""
+    welcome: "Bem Vindo "
+    forgot_password: "Esqueceu sua senha? Não tem problema recuperameos para você."
+    type_your_message: ""
+    leave_it_blank: "deixe em branco se não quiser mudar"
+    current_password_change: "precisamos dos seu password para confirmar as mudanças"
+    waiting_confirmation: "esperando confirmação para"
+    appname: "Name App"

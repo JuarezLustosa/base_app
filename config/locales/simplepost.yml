@@ -1,0 +1,11 @@
+pt-BR:
+  activerecord:
+    models:
+      simplepost:
+        one: "Mensagem"
+        other: "Mensagens"
+
+    attributes:
+      simplepost:
+        content: "Post"
+        user: "Usuário"

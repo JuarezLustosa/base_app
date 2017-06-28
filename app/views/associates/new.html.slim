@@ -1,0 +1,14 @@
+.wrapper.wrapper-content.animated.fadeInRight
+  .row
+    .col-lg-12
+      .ibox.float-e-margins
+        .ibox-title
+          h5= t('views.type_your_message')
+
+        .ibox-content
+          = form_tag import_associate_path, multipart: true, class: 'form-horizontal' do |f|
+            = render 'shared/error_messages', object: f.object
+            = file_field_tag :file
+
+            div style="margin-bottom:-10px;"
+              = submit_tag "Importar", class: "btn btn-info"

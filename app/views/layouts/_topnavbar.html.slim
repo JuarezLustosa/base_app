@@ -1,0 +1,18 @@
+.row.border-bottom
+  nav.navbar.navbar-static-top[role="navigation" style="margin-bottom: 0"]
+    .navbar-header
+    ul.nav.navbar-top-links.navbar-right
+      li
+        span.m-r-sm.text-muted = t('views.welcome')
+          | Welcome to "#{t('views.appname')}
+      li
+        - if user_signed_in?
+          li
+            = link_to "Editar", edit_user_registration_path
+          li
+            = link_to "Deslogar", destroy_user_session_path, method: :delete
+        - else
+          li
+            = link_to "Cadastrar", new_user_registration_path
+          li
+            = link_to "Logar", new_user_session_path
